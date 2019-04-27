@@ -2,14 +2,12 @@
   <div>
    <h1>Witaj w systemie do zapisów na zajęcia</h1>
 
-
    <div v-if="email.length > 0">
-       <h2>Witaj {{email}}</h2>
-       <button @click="logMeOut()">Wyloguj</button>
+       <logged-in-page :username="email" @logout="logMeOut"></logged-in-page>
    </div>
     <div v-else>
         <login-form @login="logMeIn($event)" button-label="Loguję się" header="Loguj"></login-form>
-        <login-form @login="logMeIn($event)" button-label="Rejestruję się" header="Rejestruj"></login-form>
+        <!--<login-form @login="logMeIn($event)" button-label="Rejestruję się" header="Rejestruj"></login-form>-->
     </div>
 
   </div>
@@ -18,10 +16,11 @@
 <script>
     import 'milligram';
     import LoginForm from "./LoginForm";
+    import LoggedInPage from "./LoggedInPage";
 
 // to jest wszystko JSON
 export default {
-    components: {LoginForm},
+    components: {LoginForm, LoggedInPage},
 	 data() {
 	     return {
 	    	 email: '',
