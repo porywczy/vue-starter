@@ -18,7 +18,7 @@
 </template>
 
 <script>
-
+    import "milligram";
 // to jest wszystko JSON
 export default {
 	 data() {
