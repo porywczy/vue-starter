@@ -8,7 +8,8 @@
        <button @click="logMeOut()">Wyloguj</button>
    </div>
     <div v-else>
-    <login-form @login="logMeIn($event)"></login-form>
+        <login-form @login="logMeIn($event)" button-label="Loguję się" header="Loguj"></login-form>
+        <login-form @login="logMeIn($event)" button-label="Rejestruję się" header="Rejestruj"></login-form>
     </div>
 
   </div>

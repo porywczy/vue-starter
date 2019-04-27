@@ -1,15 +1,17 @@
 <template>
     <form @submit.prevent="">
         <div>
-            <label>Zaloguj się e-mailem</label>
+            <label>{{header}}</label>
             <input type="email" v-model="email">
-            <button @click="enter()">Wchodzę</button>
+            <button @click="enter()">{{buttonLabel}}</button>
         </div>
     </form>
 </template>
 
 <script>
     export default {
+        //ustawione przez parenta
+        props: ['buttonLabel', 'header'],
         data() {
             return {
                 email: ''
